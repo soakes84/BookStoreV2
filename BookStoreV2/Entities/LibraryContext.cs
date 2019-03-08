@@ -36,6 +36,36 @@ namespace BookStoreV2.Entities
                 FirstName = "Tom",
                 LastName = "Clancy",
                 Genre = "Thriller"
+            }, new Author
+            {
+                AuthorId = Guid.NewGuid(),
+                FirstName = "Lee",
+                LastName = "Child",
+                Genre = "Action"
+            }, new Author
+            {
+                AuthorId = Guid.NewGuid(),
+                FirstName = "Anthony",
+                LastName = "Doeer",
+                Genre = "Fiction"
+            }, new Author
+            {
+                AuthorId = Guid.NewGuid(),
+                FirstName = "Clinton",
+                LastName = "Romesha",
+                Genre = "Military"
+            }, new Author
+            {
+                AuthorId = Guid.NewGuid(),
+                FirstName = "Marcus",
+                LastName = "Luttrell",
+                Genre = "Military"
+            }, new Author
+            {
+                AuthorId = Guid.NewGuid(),
+                FirstName = "Robert",
+                LastName = "Ludlum",
+                Genre = "Thriller"
             });
         }
     }
