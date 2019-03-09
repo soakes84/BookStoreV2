@@ -11,6 +11,18 @@ namespace BookStoreV2.Repository.Implementation
     {
         readonly LibraryContext _libraryContext;
 
+        public Author GetAuthor(Guid authorId)
+        {
+            try
+            {
+                return _libraryContext.Authors.Where(a => a.AuthorId == authorId).FirstOrDefault();
+            }
+            catch(Exception ex)
+            {
+                return null;
+            }
+        }
+
         public LibraryRepository(LibraryContext context)
         {
             _libraryContext = context;

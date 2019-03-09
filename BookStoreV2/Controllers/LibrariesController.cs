@@ -21,6 +21,21 @@ namespace BookStoreV2.Controllers
         }
 
         [HttpGet]
+        [Route("GetAuthor")]
+        public IActionResult GetAuthor(Guid authorId)
+        {
+            try
+            {
+                Author author = _libraryRepository.GetAuthor(authorId);
+                return Ok(author);
+            }
+            catch(Exception ex)
+            {
+                return BadRequest();
+            }
+        }
+
+        [HttpGet]
         [Route("GetAllAuthor")]
         public IActionResult GetAllAuthor()
         {
