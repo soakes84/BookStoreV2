@@ -32,5 +32,26 @@ namespace BookStoreV2.Repository.Implementation
         {
             return _libraryContext.Authors.ToList();
         }
+
+        public Author PostAuthor(Author author)
+        {
+            try
+            {
+                if (_libraryContext != null)
+                {
+                    _libraryContext.Add(author);
+                    _libraryContext.SaveChanges();
+                    return author;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
     }
 }

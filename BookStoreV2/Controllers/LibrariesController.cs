@@ -42,5 +42,27 @@ namespace BookStoreV2.Controllers
             IEnumerable<Author> authors = _libraryRepository.GetAllAuthor();
             return Ok(authors);
         }
+
+        [HttpPost]
+        [Route("AddAuthor")]
+        public IActionResult AddAuthor([FromBody]Author authorparam)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    Author author = _libraryRepository.PostAuthor(authorparam);
+                    return Ok(author);
+                }
+                else
+                {
+                    return BadRequest();
+                }
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
     }
 }

@@ -10,5 +10,6 @@ namespace BookStoreV2.Repository.Contract
     {
         IEnumerable<T> GetAllAuthor();
         Author GetAuthor(Guid authorId);
+        Author PostAuthor(Author author);
     }
 }
