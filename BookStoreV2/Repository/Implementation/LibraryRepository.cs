@@ -53,5 +53,26 @@ namespace BookStoreV2.Repository.Implementation
                 return null;
             }
         }
+
+        public Author UpdateAuthor(Author author)
+        {
+            try
+            {
+                if (_libraryContext != null)
+                {
+                    _libraryContext.Update(author);
+                    _libraryContext.SaveChanges();
+                    return author;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
     }
 }

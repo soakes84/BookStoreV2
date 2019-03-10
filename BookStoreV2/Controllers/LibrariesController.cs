@@ -64,5 +64,28 @@ namespace BookStoreV2.Controllers
                 return BadRequest();
             }
         }
+
+        [HttpPut]
+        [Route("UpdateAuthor")]
+        public IActionResult UpdateAuthor([FromBody]Author authorparam)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    Author author = _libraryRepository.UpdateAuthor(authorparam);
+                    return Ok(author);
+                }
+                else
+                {
+
+                    return BadRequest();
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
+            }
+        }
     }
 }
