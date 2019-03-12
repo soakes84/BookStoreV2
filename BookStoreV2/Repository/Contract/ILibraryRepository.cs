@@ -12,5 +12,6 @@ namespace BookStoreV2.Repository.Contract
         Author GetAuthor(Guid authorId);
         Author PostAuthor(Author author);
         Author UpdateAuthor(Author author);
+        int DeleteAuthor(Guid authorId);
     }
 }

@@ -87,5 +87,20 @@ namespace BookStoreV2.Controllers
                 return BadRequest();
             }
         }
+
+        [HttpDelete]
+        [Route("DeleteAuthor")]
+        public IActionResult DeleteAuthor(Guid authorId)
+        {
+            try
+            {
+                int result = _libraryRepository.DeleteAuthor(authorId);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
+            }
+        }
     }
 }
