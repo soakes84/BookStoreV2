@@ -33,6 +33,11 @@ namespace BookStoreV2.Repository.Implementation
             return _libraryContext.Authors.ToList();
         }
 
+        public IEnumerable<Author> GetAuthorsByGenre(string genre)
+        {
+            return _libraryContext.Authors.Where(a => a.Genre == genre).ToList();
+        }
+
         public Author PostAuthor(Author author)
         {
             try

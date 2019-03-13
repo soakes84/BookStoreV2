@@ -9,6 +9,7 @@ namespace BookStoreV2.Repository.Contract
     public interface ILibraryRepository<T>
     {
         IEnumerable<T> GetAllAuthor();
+        IEnumerable<T> GetAuthorsByGenre(string genre);
         Author GetAuthor(Guid authorId);
         Author PostAuthor(Author author);
         Author UpdateAuthor(Author author);

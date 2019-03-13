@@ -43,6 +43,14 @@ namespace BookStoreV2.Controllers
             return Ok(authors);
         }
 
+        [HttpGet]
+        [Route("GetAuthorsByGenre")]
+        public IActionResult GetAuthorsByGenre(string genre)
+        {
+            IEnumerable<Author> authors = _libraryRepository.GetAuthorsByGenre(genre);
+            return Ok(authors);
+        }
+
         [HttpPost]
         [Route("AddAuthor")]
         public IActionResult AddAuthor([FromBody]Author authorparam)
