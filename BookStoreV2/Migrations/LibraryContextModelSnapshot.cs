@@ -41,20 +41,20 @@ namespace BookStoreV2.Migrations
                     b.ToTable("Author","dbo");
 
                     b.HasData(
-                        new { AuthorId = new Guid("eceb8874-df41-4a64-9b6e-84bf8ce3315e"), FirstName = "Daniel", Genre = "Action", LastName = "Silva" },
-                        new { AuthorId = new Guid("497a5440-588a-47de-9d2d-ee48ed10d110"), FirstName = "Andrew", Genre = "Medicine", LastName = "Weil" },
-                        new { AuthorId = new Guid("d1d36299-029d-4851-8b95-b2bbdfb47254"), FirstName = "Tom", Genre = "Thriller", LastName = "Clancy" },
-                        new { AuthorId = new Guid("0fa36c56-d64b-4858-9c36-852600ccdca1"), FirstName = "Lee", Genre = "Action", LastName = "Child" },
-                        new { AuthorId = new Guid("90dca817-f00f-4db3-95ce-d53f3e8cfe8a"), FirstName = "Anthony", Genre = "Fiction", LastName = "Doeer" },
-                        new { AuthorId = new Guid("19b5bbaf-f279-443f-9a92-f1c5092d4483"), FirstName = "Clinton", Genre = "Military", LastName = "Romesha" },
-                        new { AuthorId = new Guid("f9d15bdc-4773-40af-8008-26c5642e777c"), FirstName = "Marcus", Genre = "Military", LastName = "Luttrell" },
-                        new { AuthorId = new Guid("15557698-99c9-4596-981e-678d1ed0d78a"), FirstName = "Robert", Genre = "Thriller", LastName = "Ludlum" }
+                        new { AuthorId = new Guid("a3bd56f7-7a3c-4628-acfc-f39157aa0186"), FirstName = "Daniel", Genre = "Action", LastName = "Silva" },
+                        new { AuthorId = new Guid("69a5a3f8-766a-4b09-9953-5ef77685c7ac"), FirstName = "Andrew", Genre = "Medicine", LastName = "Weil" },
+                        new { AuthorId = new Guid("f1f91ce5-b8d8-45d7-810c-1df66cbd0c1e"), FirstName = "Tom", Genre = "Thriller", LastName = "Clancy" },
+                        new { AuthorId = new Guid("20bdf19c-a105-4389-94b2-24986330f914"), FirstName = "Lee", Genre = "Action", LastName = "Child" },
+                        new { AuthorId = new Guid("06395987-7fe1-42bf-99ab-18185e544b3f"), FirstName = "Anthony", Genre = "Fiction", LastName = "Doeer" },
+                        new { AuthorId = new Guid("067383b1-250f-4b1a-a1dc-f80414cb8ca5"), FirstName = "Clinton", Genre = "Military", LastName = "Romesha" },
+                        new { AuthorId = new Guid("498df901-6252-46d2-b0e6-c6a5f4901950"), FirstName = "Marcus", Genre = "Military", LastName = "Luttrell" },
+                        new { AuthorId = new Guid("23fd84d9-ae2d-4942-95f7-15bec6fdd30a"), FirstName = "Robert", Genre = "Thriller", LastName = "Ludlum" }
                     );
                 });
 
             modelBuilder.Entity("BookStoreV2.Entities.Book", b =>
                 {
-                    b.Property<Guid>("BookdId")
+                    b.Property<Guid>("BookId")
                         .ValueGeneratedOnAdd();
 
                     b.Property<Guid>("AuthorId");
@@ -66,7 +66,7 @@ namespace BookStoreV2.Migrations
                         .IsRequired()
                         .HasMaxLength(100);
 
-                    b.HasKey("BookdId");
+                    b.HasKey("BookId");
 
                     b.HasIndex("AuthorId");
 

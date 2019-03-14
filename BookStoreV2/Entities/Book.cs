@@ -11,7 +11,7 @@ namespace BookStoreV2.Entities
     public class Book
     {
         [Key]
-        public Guid BookdId { get; set; }
+        public Guid BookId { get; set; }
 
         [Required]
         [MaxLength(100)]

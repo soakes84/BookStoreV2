@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookStoreV2.Migrations
 {
     [DbContext(typeof(LibraryContext))]
-    [Migration("20190307033645_Initial")]
-    partial class Initial
+    [Migration("20190314011036_FixedSpellError")]
+    partial class FixedSpellError
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -41,6 +41,17 @@ namespace BookStoreV2.Migrations
                     b.HasKey("AuthorId");
 
                     b.ToTable("Author","dbo");
+
+                    b.HasData(
+                        new { AuthorId = new Guid("a3bd56f7-7a3c-4628-acfc-f39157aa0186"), FirstName = "Daniel", Genre = "Action", LastName = "Silva" },
+                        new { AuthorId = new Guid("69a5a3f8-766a-4b09-9953-5ef77685c7ac"), FirstName = "Andrew", Genre = "Medicine", LastName = "Weil" },
+                        new { AuthorId = new Guid("f1f91ce5-b8d8-45d7-810c-1df66cbd0c1e"), FirstName = "Tom", Genre = "Thriller", LastName = "Clancy" },
+                        new { AuthorId = new Guid("20bdf19c-a105-4389-94b2-24986330f914"), FirstName = "Lee", Genre = "Action", LastName = "Child" },
+                        new { AuthorId = new Guid("06395987-7fe1-42bf-99ab-18185e544b3f"), FirstName = "Anthony", Genre = "Fiction", LastName = "Doeer" },
+                        new { AuthorId = new Guid("067383b1-250f-4b1a-a1dc-f80414cb8ca5"), FirstName = "Clinton", Genre = "Military", LastName = "Romesha" },
+                        new { AuthorId = new Guid("498df901-6252-46d2-b0e6-c6a5f4901950"), FirstName = "Marcus", Genre = "Military", LastName = "Luttrell" },
+                        new { AuthorId = new Guid("23fd84d9-ae2d-4942-95f7-15bec6fdd30a"), FirstName = "Robert", Genre = "Thriller", LastName = "Ludlum" }
+                    );
                 });
 
             modelBuilder.Entity("BookStoreV2.Entities.Book", b =>

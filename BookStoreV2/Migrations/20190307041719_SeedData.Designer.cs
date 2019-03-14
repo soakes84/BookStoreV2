@@ -51,7 +51,7 @@ namespace BookStoreV2.Migrations
 
             modelBuilder.Entity("BookStoreV2.Entities.Book", b =>
                 {
-                    b.Property<Guid>("BookdId")
+                    b.Property<Guid>("BookId")
                         .ValueGeneratedOnAdd();
 
                     b.Property<Guid>("AuthorId");
@@ -63,7 +63,7 @@ namespace BookStoreV2.Migrations
                         .IsRequired()
                         .HasMaxLength(100);
 
-                    b.HasKey("BookdId");
+                    b.HasKey("BookId");
 
                     b.HasIndex("AuthorId");
 
