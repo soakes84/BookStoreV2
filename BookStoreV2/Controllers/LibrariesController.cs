@@ -15,9 +15,12 @@ namespace BookStoreV2.Controllers
     {
         private readonly ILibraryRepository<Author> _libraryRepository;
 
-        public LibrariesController(ILibraryRepository<Author> libraryRepository)
+        private readonly ILibraryRepository<Book> _libraryRepositoryB;
+
+        public LibrariesController(ILibraryRepository<Author> libraryRepository, ILibraryRepository<Book> libraryRepositoryB)
         {
             _libraryRepository = libraryRepository;
+            _libraryRepositoryB = libraryRepositoryB;
         }
 
         [HttpGet]
@@ -109,6 +112,14 @@ namespace BookStoreV2.Controllers
             {
                 return BadRequest();
             }
+        }
+
+        [HttpGet]
+        [Route("GetAllBooks")]
+        public IActionResult GetAllBooks()
+        {
+            IEnumerable<Book> books = _libraryRepositoryB.GetAllBooks();
+            return Ok(books);
         }
     }
 }
