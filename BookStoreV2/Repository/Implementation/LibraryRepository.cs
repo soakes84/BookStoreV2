@@ -109,6 +109,11 @@ namespace BookStoreV2.Repository.Implementation
                 return 0;
             }
         }
+
+        public IEnumerable<Book> GetAllBooks()
+        {
+            return _libraryContext.Books.ToList();
+        }
     }
 }
 
