@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BookStoreV2.Repository.Implementation
 {
-    public class LibraryRepository : ILibraryRepository<Author>
+    public class LibraryRepository : ILibraryRepository<Author>, ILibraryRepository<Book>
     {
         readonly LibraryContext _libraryContext;
 
@@ -113,6 +113,21 @@ namespace BookStoreV2.Repository.Implementation
         public IEnumerable<Book> GetAllBooks()
         {
             return _libraryContext.Books.ToList();
+        }
+
+        IEnumerable<Author> ILibraryRepository<Author>.GetAllBooks()
+        {
+            throw new NotImplementedException();
+        }
+
+        IEnumerable<Book> ILibraryRepository<Book>.GetAllAuthor()
+        {
+            throw new NotImplementedException();
+        }
+
+        IEnumerable<Book> ILibraryRepository<Book>.GetAuthorsByGenre(string genre)
+        {
+            throw new NotImplementedException();
         }
     }
 }
